@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=League+Spartan:700);
+
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --spec-key-bg: hsl(225, 21%, 49%);
+  --spec-key-shadow: hsl(224, 28%, 35%);
+  --red-key-bg: hsl(6, 63%, 50%);
+  --red-key-shadow: hsl(6, 70%, 34%);
+  --key-bg: #eae3db;
+  --key-shadow: #aea39f;
+  --key-shadow-pressed: #726b68;
+  --text-blue: hsl(221, 14%, 31%);
+  --text-white: hsl(0, 0, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  font-family: "League Spartan";
+}
+
+body {
+  background: var(--main-bg);
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.result {
+  background: var(--screen-bg);
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  color: var(--text-white);
+  padding: 0.5rem 1rem;
+}
+
+.result input[type="text"],
+.result input[type="text"]:focus,
+.result input[type="text"]:active,
+.result input[type="text"]:enabled {
+  color: white;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.buttons-container {
+  font-size: 2rem;
+  background: var(--keypad-bg);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "button1 button2 button3 button4"
+    "button5 button6 button7 button8"
+    "button9 button10 button11 button12"
+    "button13 button14 button15 button16"
+    "button17 button17 button18 button18";
+  padding: 10px;
+}
+
+.buttons-container > .btn {
+  border-radius: 0.5rem;
+  color: var(--text-blue);
+  background: var(--key-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--key-shadow);
+  padding-top: 0.25rem;
+}
+
+.buttons-container > .btn > span {
+  padding: 0.5rem 1rem;
+}
+
+.buttons-container > .btn:nth-child(1) {
+  grid-area: button1;
+}
+
+.buttons-container > .btn:nth-child(2) {
+  grid-area: button2;
+}
+
+.buttons-container > .btn:nth-child(3) {
+  grid-area: button3;
+}
+
+.buttons-container > .btn:nth-child(4) {
+  grid-area: button4;
+}
+
+.buttons-container > .btn:nth-child(5) {
+  grid-area: button5;
+}
+
+.buttons-container > .btn:nth-child(6) {
+  grid-area: button6;
+}
+
+.buttons-container > .btn:nth-child(7) {
+  grid-area: button7;
+}
+
+.buttons-container > .btn:nth-child(8) {
+  grid-area: button8;
+}
+
+.buttons-container > .btn:nth-child(9) {
+  grid-area: button9;
+}
+
+.buttons-container > .btn:nth-child(10) {
+  grid-area: button10;
+}
+
+.buttons-container > .btn:nth-child(11) {
+  grid-area: button11;
+}
+
+.buttons-container > .btn:nth-child(12) {
+  grid-area: button12;
+}
+
+.buttons-container > .btn:nth-child(13) {
+  grid-area: button13;
+}
+
+.buttons-container > .btn:nth-child(14) {
+  grid-area: button14;
+}
+
+.buttons-container > .btn:nth-child(15) {
+  grid-area: button15;
+}
+
+.buttons-container > .btn:nth-child(16) {
+  grid-area: button16;
+}
+
+.buttons-container > .btn:nth-child(17) {
+  grid-area: button17;
+}
+
+.buttons-container > .btn:nth-child(18) {
+  grid-area: button18;
+}
+
+.buttons-container > .btn:hover {
+  cursor: pointer;
+  background: var(--key-bg);
+  color: var(--text-white);
+  border-bottom: 2px solid var(--key-shadow-pressed);
+}
+
+.btn.del,
+.btn.reset {
+  background: var(--spec-key-bg);
+  border-bottom: 2px solid var(--spec-key-shadow);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn.equal {
+  background: var(--red-key-bg);
+  border-bottom: 2px solid var(--red-key-shadow);
+  color: white;
+}
